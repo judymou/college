@@ -1,10 +1,8 @@
 {
-  "name": "catfacts",
-  "description": "cat facts app",
+  "name": "college",
+  "description": "college",
   "version": "0.0.1",
   "dependencies": {
-    "express": "^4.12.3",
-    "stripe": "latest",
-    "mongodb": "latest"
+    "express": "latest"
   }
 }

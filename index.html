@@ -1,122 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>fullPage.js A simple Demo</title>
-	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage very simple demo." />
-	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
-	<meta name="Resource-type" content="Document" />
-
-	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
-	<link rel="stylesheet" type="text/css" href="index.css" />
-
+	<title>College prep</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="jquery.fullPage.js"></script>
-	<script type="text/javascript">
-    var facts = {'ANIMAL': ['CAT', 'DOG', 'TIGER'],
-                 'HISTORY': ['WWI', 'WWII', 'COLD WAR'],
-                 'PLANTS' : ['FLOWER', 'TREE'],
-                 'SPACE' : ['MOON', 'MARS', 'EARTH', 'STARS']};
-		var collectionId;
-    $(document).ready(function() {
-			$("#fullpage").fullpage({
-				sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', '#4BBFC3', 'whitesmoke'],
-        anchors: ['PhoneFacts', 'Category', 'Facts', 'Phone', 'Thanks']
-			});
-      $("#beginbutton").click(function() {
-        $("#section1").css("display", "");
-        $.fn.fullpage.moveTo(2);
-      });
-      $(".category").click(function(event) {
-        $("#factholder").empty();
-        facts[event.target.innerText].forEach(function(element) {
-          $("#factholder").append("<div class='button fact'>" + element + "</div>");
-        });
-        $('#section2').css("display", "");
-        $.fn.fullpage.moveTo(3);
-      });
-      $(".fact").click(function(event) {
-        collectionId = event.target.innerText;
-        $('#section3').css("display", "");
-        $.fn.fullpage.moveTo(4);
-      });
-      var handler = StripeCheckout.configure({
-        key: 'pk_test_TFHGrWKWYdgVzsv5eLm3PW9C',
-        token: function(token) {
-        document.body.style.cursor='wait';
-        $.get('/pay?email=' + token.email + '&tok=' + token.id + '&amount=99'
-          + '&friendNumber=' + $("#phonenumber").val()
-          + '&collectionId=' + collectionId.toLowerCase(),
-          function(resp) {
-            document.body.style.cursor='default';
-            if (resp.success) {
-              $('#section4').css("display", "");
-              $.fn.fullpage.moveTo(5);
-            } else {
-              alert('Uh oh, something went wrong.  Your card was not charged.');
-            }
-          });
-        },
-      });
-      $("#nextbutton").click(function(event) {
-        handler.open({
-          name: 'Subscribe',
-          description: $("#phonenumber").val() + ' to ' + collectionId + ' facts',
-          amount: 99
-        });
-      }); 
-		});
-	</script>
+  <script src="index.js"></script>
   <style>
-    .button {
-      cursor: pointer;
-      background: none;
-      border: solid 1px black;
-      text-transform: uppercase;
-      font-weight: 300;
-      display: inline-block;
-      padding: 10px 30px;
-      margin-top: 60px;
-      margin-bottom: 10px;
-      border-radius: 40px;
-      font-size: 30px;
-      margin-left:10px;
-    }
   </style>
 </head>
 <body>
-
-<div id="fullpage">
-	<div class="section active" id="section0" data-anchor="PhoneFacts">
-    <h1>Phone facts</h1>
-    <div class="button" id="beginbutton">Begin</div>
-  </div>
-	<div class="section" id="section1" data-achor="Category" style="display:none">
-    <h1>Pick category</h1>
-    <div class="button category">Animal</div>
-    <div class="button category">History</div>
-    <div class="button category">Plants</div>
-    <div class="button category">Space</div>
-  </div>
-	<div class="section" id="section2" data-achor="Facts" style="display:none">
-    <h1>Pick facts</h1>
-    <div id="factholder" class="fact"></div>
-  </div>
-	<div class="section" id="section3" data-achor="Phone" style="display:none">
-    <h1>Send facts to</h1>
-    <input id="phonenumber" type="text" style="font-size: 35px" placeholder="1112223333"></input>
-    <div>
-      <script src="https://checkout.stripe.com/checkout.js"></script>
-      <div class="button" id="nextbutton">Next</div>
-    </div>
-  </div>
-  <div class="section" id="section4" data-achor="Thanks" style="display:none">
-    <h1>Successfully subscribed!</h1>
-  </div>
+<div>
+College prep
 </div>
-
 </body>
 </html>
