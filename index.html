@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>College prep</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <title>College prep</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="jquery.bxslider.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="jquery.bxslider.css">
   <script src="index.js"></script>
+
+  <link type="text/css" rel="stylesheet" href="bootstrap.min.css">
   <style>
+    .slider-image {
+      height: 50%;
+      width: auto;
+    }
   </style>
 </head>
 <body>
-<div>
-College prep
-</div>
+  <div>
+    <ul class="bxslider">
+      <li><img class="slider-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Robert_A._Millikan_Memorial_Library_at_Caltech.jpg/1280px-Robert_A._Millikan_Memorial_Library_at_Caltech.jpg" title="Caltech" /></li>
+      <li><img src="http://mitadmissions.org/images/mit-blogs/Aerial4.png" title="MIT"/></li>
+      <li><img src="http://dartmouth.edu/sites/default/files/styles/header_image/public/JS09_Campus_Aerial001.jpg?itok=Hx55fy68" title="Dartmouth"/></li>
+    </ul>
+  </div>
 </body>
 </html>

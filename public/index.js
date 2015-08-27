@@ -1,8 +1,11 @@
 function App() {
   var me = this;
   App.prototype.init = function() {
-    console.log("hiiiii");
-    $('.temp').html("hello judy");
+    $('.bxslider').bxSlider({
+      auto: true,
+      captions: true,
+      mode: 'fade'
+    });
   }
 }
 $(function() {
