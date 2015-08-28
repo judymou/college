@@ -2,6 +2,9 @@
   "name": "college",
   "description": "college",
   "version": "0.0.1",
+  "scripts": {
+    "start": "node college_app.js"
+  },
   "dependencies": {
     "express": "latest"
   }
