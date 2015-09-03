@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
 var gsheet = require("google-spreadsheet");
@@ -7,6 +8,7 @@ var app = express();
 
 var sheet = new gsheet('1EwcpAOYA4PuE6a8H_oNUl-5VdTv4yPa2BPJQ1_ekO1M');
 
+app.use(bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
@@ -14,15 +16,14 @@ app.get('/', function(req, res) {
 });
 
 app.post('/signup', function(req, res) {
-  console.log(req);
   sheet.useServiceAccountAuth(gsheetCred, function(err) {
     if (err) {
       console.log(err);
     } else {
       sheet.addRow(1, {
-         name: req.name,
-         email: req.email,
-         question: req.question || ''
+         name: req.body.name,
+         email: req.body.email,
+         question: req.body.question || ''
       });
       res.send({success: true});
       return;

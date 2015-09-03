@@ -6,6 +6,7 @@
     "start": "node college_app.js"
   },
   "dependencies": {
+    "body-parser": "latest",
     "express": "latest",
     "google-spreadsheet": "latest"
   }
