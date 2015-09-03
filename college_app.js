@@ -9,10 +9,6 @@ app.get('/', function(req, res) {
   serveFile('index.html', res);
 });
 
-app.get('/2', function(req, res) {
-  serveFile('index2.html', res);
-});
-
 function serveFile(path, res) {
   fs.readFile(path, function (err, data){
     res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
