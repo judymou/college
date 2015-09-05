@@ -15,6 +15,10 @@ app.get('/', function(req, res) {
   serveFile('index.html', res);
 });
 
+app.get('/chinese', function(req, res) {
+  serveFile('index_chinese.html', res);
+});
+
 app.post('/signup', function(req, res) {
   sheet.useServiceAccountAuth(gsheetCred, function(err) {
     if (err) {
