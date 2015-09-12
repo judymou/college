@@ -6,6 +6,7 @@ function App() {
      var scrollTop = $(window).scrollTop();
      $('.overlay_bg').show().css({'height': docHeight});
      $('.popup').show().css({'top': scrollTop+50+'px'});
+     $('.popup').show().css({'position': 'fixed'});
     });
 
     $('.close-popup, .overlay-bg').click(function() {
