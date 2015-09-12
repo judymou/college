@@ -3,11 +3,12 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
 var gsheet = require("google-spreadsheet");
-//var gsheetCred = require('./google-generated-creds.json');
+var gsheetCred = require('./google-generated-creds.json');
+/*
 var gsheetCred = {
   client_email: process.env.gsheet_client_email,
   private_key: process.env.gsheet_private_key
-};
+};*/
 var app = express();
 
 var sheet = new gsheet('1EwcpAOYA4PuE6a8H_oNUl-5VdTv4yPa2BPJQ1_ekO1M');
