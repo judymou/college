@@ -3,7 +3,11 @@
   "description": "college",
   "version": "0.0.1",
   "scripts": {
+    "eslint": "./node_modules/.bin/eslint .",
     "start": "node college_app.js"
+  },
+  "devDependencies": {
+    "eslint": "*"
   },
   "dependencies": {
     "body-parser": "latest",

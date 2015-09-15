@@ -1,5 +1,4 @@
 function App() {
-  var me = this;
   App.prototype.init = function() {
     $('#signup').on('click', function() {
      var docHeight = $(document).height();
@@ -41,5 +40,5 @@ function App() {
 }
 $(function() {
   window.app = new App();
-  app.init();
+  window.app.init();
 });

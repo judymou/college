@@ -1,0 +1,17 @@
+{
+  "extends": "../.eslintrc",
+
+  "rules": {
+    "no-console": 2
+  },
+
+  "env": {
+    "node": false,
+    "browser": true,
+    "jquery": true,
+  },
+
+  "globals": {
+    "skel": true,
+  }
+}
