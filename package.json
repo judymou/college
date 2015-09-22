@@ -7,12 +7,13 @@
     "start": "node college_app.js"
   },
   "devDependencies": {
-    "eslint": "*"
+    "eslint": "latest"
   },
   "dependencies": {
     "body-parser": "latest",
     "express": "latest",
     "express-handlebars": "latest",
-    "google-spreadsheet": "latest"
+    "google-spreadsheet": "latest",
+    "i18next": "latest"
   }
 }

@@ -2,18 +2,30 @@ var express = require('express');
 var expressHandlebars = require('express-handlebars');
 var bodyParser = require('body-parser');
 var path = require('path');
-var gsheet = require("google-spreadsheet");
+var gsheet = require('google-spreadsheet');
 //var gsheetCred = require('./google-generated-creds.json');
 var gsheetCred = {
   client_email: process.env.gsheet_client_email,
   private_key: process.env.gsheet_private_key
 };
 var app = express();
+var i18n = require('i18next');
 
 var sheet = new gsheet('1EwcpAOYA4PuE6a8H_oNUl-5VdTv4yPa2BPJQ1_ekO1M');
 
+i18n.init({
+  ns: 'index_page',
+  saveMissing: false,
+  returnObjectTrees: true,
+  fallbackLng: 'en',
+  useCookie: false,
+  preload: ['en', 'zh']
+});
+i18n.registerAppHelper(app);
+
 app.use(bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(i18n.handle);
 
 app.engine('html', expressHandlebars());
 app.set('view engine', 'html');
@@ -23,7 +35,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/chinese', function(req, res) {
-  res.render('index_chinese');
+  req.lng = 'zh';
+  res.render('index');
 });
 
 app.post('/signup', function(req, res) {
