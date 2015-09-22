@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "latest",
     "express": "latest",
+    "express-handlebars": "latest",
     "google-spreadsheet": "latest"
   }
 }
