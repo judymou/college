@@ -11,31 +11,33 @@
 		breakpoints: {
 			global: {
 				href: 'css/style.css',
-				containers: 1400,
-				grid: { gutters: ['2em', 0] }
+				grid: { gutters: ['1.5em', 0] }
 			},
 			xlarge: {
-				media: '(max-width: 1680px)',
+				media: '(min-width: 1281px) and (max-width: 1680px)',
 				href: 'css/style-xlarge.css',
-				containers: 1200
 			},
 			large: {
-				media: '(max-width: 1280px)',
+				media: '(min-width: 981px) and (max-width: 1280px)',
 				href: 'css/style-large.css',
-				containers: 960,
-				grid: { gutters: ['1.5em', 0] },
-				viewport: { scalable: false }
+			},
+			mobile: {
+				media: '(max-width: 980px)',
+				href: 'css/style-mobile.css',
+        containers: '90%!',
+				grid: { gutters: ['1.25em', 0] }
 			},
 			medium: {
-				media: '(max-width: 980px)',
-				href: 'css/style-medium.css',
-				containers: '90%!'
+				media: '(min-width: 737px) and (max-width: 980px)',
+				href: 'css/style-medium.css'
+			},
+			phone: {
+				media: '(max-width: 736px)',
+				href: 'css/style-phone.css'
 			},
 			small: {
-				media: '(max-width: 736px)',
-				href: 'css/style-small.css',
-				containers: '90%!',
-				grid: { gutters: ['1.25em', 0] }
+				media: '(min-width: 481px) and (max-width: 736px)',
+				href: 'css/style-small.css'
 			},
 			xsmall: {
 				media: '(max-width: 480px)',
@@ -48,7 +50,7 @@
 					mode: 'transform'
 				},
 				navButton: {
-					breakpoints: 'medium',
+					breakpoints: 'mobile',
 					height: '4em',
 					html: '<span class="toggle" data-action="toggleLayer" data-args="navPanel"></span>',
 					position: 'top-left',
@@ -57,7 +59,7 @@
 				},
 				navPanel: {
 					animation: 'overlayX',
-					breakpoints: 'medium',
+					breakpoints: 'mobile',
 					clickToHide: true,
 					height: '100%',
 					hidden: true,
