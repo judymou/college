@@ -15,11 +15,11 @@
 			},
 			xlarge: {
 				media: '(min-width: 1281px) and (max-width: 1680px)',
-				href: 'css/style-xlarge.css',
+				href: 'css/style-xlarge.css'
 			},
 			large: {
 				media: '(min-width: 981px) and (max-width: 1280px)',
-				href: 'css/style-large.css',
+				href: 'css/style-large.css'
 			},
 			mobile: {
 				media: '(max-width: 980px)',
