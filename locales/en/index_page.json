@@ -1,6 +1,32 @@
 {
   "title": "College Admission Lab",
   "banner": {
-    "heading": "Helping you live the college dream"
+    "heading": "Helping you live the college dream",
+    "subheading": "Instant, real advice from certified students in top universities",
+    "button": "Get Started"
+  },
+  "one": {
+    "heading": "Ask anything that comes to mind",
+    "subheading": "Have questions on the applications and requirements? Deciding where to apply?",
+    "chat_info_1": "Instant Answer",
+    "chat_info_1_desc": "Free 1:1 conversation in online chat room. Get feedback from couselors in the U.S. instantly.",
+    "chat_info_2": "Face to Face Counseling",
+    "chat_info_2_desc": "Video chat with your matching counselor to discuss any concerns and questions.",
+    "chat_info_3": "Top Students",
+    "chat_info_3_desc": "The best students from top universities shares their experiences with you.",
+    "chat_info_4": "One Stop College Counseling",
+    "chat_info_4_desc": "Get in touch with us. We start working with you as early as 9th grade to help you explore your potentials."
+  },
+  "two": {
+    "heading": "Meet the team",
+    "subheading": "Best students from top 10 colleges in the world",
+    "caltech": "Caltech",
+    "stanford": "Stanford",
+    "mit": "MIT",
+    "berkeley": "Berkeley"
+  },
+  "three": {
+    "heading": "Contact Us",
+    "subheading": "Get a response within 12 hours"
   }
 }
