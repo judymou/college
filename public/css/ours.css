@@ -35,7 +35,7 @@
 .chat-line {
   height: 2em;
   margin-right: 50%;
-  border-right: 2px dotted black;
+  border-right: 2px dotted grey;
 }
 
 .chat-info {
