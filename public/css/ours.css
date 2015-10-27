@@ -1,20 +1,20 @@
 .chat {
   overflow: auto;
   position: relative;
-  background: white;
   border-radius: .75em;
   padding: 1em;
-  border-style: solid;
   border-width: 0.2em;
   border-color: #51b6d9;
 }
 
 .chat.left {
   margin-right: 8em;
+  background: #51b6d9;
 }
 
 .chat.right {
   margin-left: 8em;
+  background: #FFECB3;
 }
 
 .chat-image {
@@ -35,7 +35,7 @@
 .chat-line {
   height: 2em;
   margin-right: 50%;
-  border-right: 2px dotted #51b6d9;
+  border-right: 2px dotted black;
 }
 
 .chat-info {
