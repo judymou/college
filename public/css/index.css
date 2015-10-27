@@ -25,6 +25,10 @@
   box-shadow: 0 0 5px rgba(0,0,0,0.9);
 }
 
+.popup {
+  top: 15%;
+}
+
 .close-popup {
   float: right;
   cursor: pointer;

@@ -1,10 +1,7 @@
 function App() {
   App.prototype.init = function() {
     $('#signup').on('click', function() {
-     var docHeight = $(document).height();
-     var scrollTop = $(window).scrollTop();
-     $('.overlay_bg').show().css({'height': docHeight});
-     $('.popup').show().css({'top': scrollTop+50+'px'});
+     $('#popupbg').show();
      $('.popup').show().css({'position': 'fixed'});
     });
 
