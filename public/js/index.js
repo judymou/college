@@ -3,14 +3,16 @@ function App() {
 
   App.prototype.init = function() {
     $('#signup').on('click', function() {
-     $('#popupbg').show();
-     $('.popup').show().css({'position': 'fixed'});
+      $('#popupbg').show();
+      $('.popup').show().css({'position': 'fixed'});
+      me.track('Action', 'show signup modal');
     });
 
     $('#start-talking').on('click', function() {
       $('html, body').animate({
           scrollTop: $('#three').offset().top
       }, 1000);
+      me.track('Action', 'start talking click');
     });
 
     $('.close-popup, .overlay-bg').click(function() {
@@ -34,7 +36,7 @@ function App() {
           }
           $('.overlay-bg, .overlay-content').hide();
         });
-      me.track('main send message');
+      me.track('Signup', 'main send message');
     });
     $('#send-message-footer').on('click', function() {
       event.preventDefault();
@@ -51,13 +53,13 @@ function App() {
           }
           $('.overlay-bg, .overlay-content').hide();
         });
-      me.track('footer send message');
+      me.track('Signup', 'footer send message');
     });
   };
 
-  App.prototype.track = function(eventString) {
+  App.prototype.track = function(action, eventString) {
     mixpanel.track(eventString);
-    ga('send', 'event', 'Homepage', 'Signup', eventString);
+    ga('send', 'event', 'Homepage', action, eventString);
   };
 }
 $(function() {
