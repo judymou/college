@@ -58,8 +58,8 @@ function App() {
   };
 
   App.prototype.track = function(action, eventString) {
-    mixpanel.track(eventString);
-    ga('send', 'event', 'Homepage', action, eventString);
+    window.mixpanel.track(eventString);
+    window.ga('send', 'event', 'Homepage', action, eventString);
   };
 }
 $(function() {
