@@ -28,5 +28,10 @@
   "three": {
     "heading": "联系我们",
     "subheading": "12 小时内及时回复"
+  },
+  "footer": {
+    "name": "姓名",
+    "email": "邮箱",
+    "message": "您想问的问题"
   }
 }

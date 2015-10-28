@@ -28,5 +28,10 @@
   "three": {
     "heading": "Contact Us",
     "subheading": "Get a response within 12 hours"
+  },
+  "footer": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message"
   }
 }
