@@ -1,4 +1,6 @@
 function App() {
+  var me = this;
+
   App.prototype.init = function() {
     $('#signup').on('click', function() {
      $('#popupbg').show();
@@ -21,7 +23,7 @@ function App() {
         alert('Sorry, cannot sign you up. Some required information is missing.');
         return;
       }
-      $.post('/signup', 
+      $.post('/signup',
              {name: $('#namepopup').val(), email: $('#emailpopup').val(),
               question: $('#messagepopup').val()},
         function(data) {
@@ -32,6 +34,7 @@ function App() {
           }
           $('.overlay-bg, .overlay-content').hide();
         });
+      me.track('main send message');
     });
     $('#send-message-footer').on('click', function() {
       event.preventDefault();
@@ -48,10 +51,13 @@ function App() {
           }
           $('.overlay-bg, .overlay-content').hide();
         });
+      me.track('footer send message');
     });
   };
 
-  App.prototype._signUp = function() {
+  App.prototype.track = function(eventString) {
+    mixpanel.track(eventString);
+    ga('send', 'event', 'Homepage', 'Signup', eventString);
   };
 }
 $(function() {
