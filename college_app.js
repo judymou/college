@@ -30,11 +30,11 @@ app.use(i18n.handle);
 app.engine('html', expressHandlebars());
 app.set('view engine', 'html');
 
-app.get('/', function(req, res) {
+app.get('/en', function(req, res) {
   res.render('index');
 });
 
-app.get('/chinese', function(req, res) {
+app.get('/', function(req, res) {
   req.lng = 'zh';
   res.render('index');
 });
