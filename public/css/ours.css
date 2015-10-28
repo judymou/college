@@ -8,12 +8,12 @@
 }
 
 .chat.left {
-  margin-right: 8em;
+  margin-right: 20%;
   background: #AAE1F5;
 }
 
 .chat.right {
-  margin-left: 8em;
+  margin-left: 20%;
   background: #FFECB3;
 }
 
