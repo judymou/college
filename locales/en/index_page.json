@@ -30,6 +30,7 @@
     "subheading": "Get a response within 12 hours"
   },
   "footer": {
+    "prompt": "We are a team of students who went to top schools in the U.S. Let us know what's on your mind and we'll get back to you within 12 hours!",
     "name": "Name",
     "email": "Email",
     "message": "Message"
