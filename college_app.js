@@ -1,3 +1,4 @@
+var compression = require('compression');
 var express = require('express');
 var expressHandlebars = require('express-handlebars');
 var bodyParser = require('body-parser');
@@ -26,6 +27,7 @@ i18n.registerAppHelper(app);
 app.use(bodyParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(i18n.handle);
+app.use(compression());
 
 app.engine('html', expressHandlebars());
 app.set('view engine', 'html');
