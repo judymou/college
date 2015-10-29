@@ -31,8 +31,11 @@
 }
 
 .close-popup {
-  float: right;
+  position: absolute;
+  top: 5px;
+  right: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .close-btn {
@@ -61,5 +64,6 @@
     margin: 0 2%;
     top: 0;
     left: 0;
+    padding: 25px;
   }
 }
