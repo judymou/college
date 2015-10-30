@@ -15,7 +15,7 @@ function App() {
       me.track('Action', 'start talking click');
     });
 
-    $('.close-popup, .overlay-bg').click(function() {
+    $('.close-popup, .overlay-bg').on('click', function() {
       $('.overlay-bg, .overlay-content').hide();
     });
 
