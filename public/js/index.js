@@ -21,12 +21,12 @@ function App() {
 
     $('#send-message').on('click', function() {
       event.preventDefault();
-      if (!$('#namepopup').val() || !$('#emailpopup').val() || !$('#messagepopup').val()) {
+      var signupData = {name: $('#namepopup').val(), email: $('#emailpopup').val(),
+              question: $('#messagepopup').val()};
+      if (!signupData.name || !signupData.email || !signupData.question) {
         alert('Sorry, cannot sign you up. Some required information is missing.');
         return;
       }
-      var signupData = {name: $('#namepopup').val(), email: $('#emailpopup').val(),
-              question: $('#messagepopup').val()};
       $.post('/signup', signupData, function(data) {
           if (data.success) {
             alert('Thank you for signing up.');
@@ -39,11 +39,11 @@ function App() {
     });
     $('#send-message-footer').on('click', function() {
       event.preventDefault();
-      if (!$('#name').val() || !$('#email').val() || !$('#message').val()) {
+      var signupData = {name: $('#name').val(), email: $('#email').val(), question: $('#message').val()};
+      if (!signupData.name || !signupData.email || !signupData.question) {
         alert('Sorry, cannot sign you up. Some required information is missing.');
         return;
       }
-      var signupData = {name: $('#name').val(), email: $('#email').val(), question: $('#message').val()};
       $.post('/signup', signupData, function(data) {
           if (data.success) {
             alert('Thank you for signing up.');
