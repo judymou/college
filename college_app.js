@@ -44,6 +44,7 @@ app.post('/signup', function(req, res) {
   sheet.useServiceAccountAuth(gsheetCred, function(err) {
     if (err) {
       console.log(err);
+      res.send({success: false});
     } else {
       sheet.addRow(1, {
          name: req.body.name,
@@ -51,9 +52,7 @@ app.post('/signup', function(req, res) {
          question: req.body.question || ''
       });
       res.send({success: true});
-      return;
     }
-    res.send({success: false});
   })
 });
 
