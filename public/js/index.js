@@ -2,13 +2,15 @@ function App() {
   var me = this;
 
   App.prototype.init = function() {
-    $('#signup').on('click', function() {
+    $('#signup').on('click', function(e) {
+      e.preventDefault();
       $('#popupbg').show();
       $('.popup').show().css({'position': 'fixed'});
       me.track('Action', 'show signup modal');
     });
 
-    $('#start-talking').on('click', function() {
+    $('#start-talking').on('click', function(e) {
+      e.preventDefault();
       $('html, body').animate({
           scrollTop: $('#three').offset().top
       }, 1000);
@@ -19,8 +21,8 @@ function App() {
       $('.overlay-bg, .overlay-content').hide();
     });
 
-    $('#send-message').on('click', function() {
-      event.preventDefault();
+    $('#send-message').on('click', function(e) {
+      e.preventDefault();
       var signupData = {name: $('#namepopup').val(), email: $('#emailpopup').val(),
               question: $('#messagepopup').val()};
       if (!signupData.name || !signupData.email || !signupData.question) {
@@ -37,8 +39,9 @@ function App() {
         });
       me.track('Signup', 'main send message', signupData);
     });
-    $('#send-message-footer').on('click', function() {
-      event.preventDefault();
+
+    $('#send-message-footer').on('click', function(e) {
+      e.preventDefault();
       var signupData = {name: $('#name').val(), email: $('#email').val(), question: $('#message').val()};
       if (!signupData.name || !signupData.email || !signupData.question) {
         alert('Sorry, cannot sign you up. Some required information is missing.');
