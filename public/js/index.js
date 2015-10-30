@@ -25,10 +25,9 @@ function App() {
         alert('Sorry, cannot sign you up. Some required information is missing.');
         return;
       }
-      $.post('/signup',
-             {name: $('#namepopup').val(), email: $('#emailpopup').val(),
-              question: $('#messagepopup').val()},
-        function(data) {
+      var signupData = {name: $('#namepopup').val(), email: $('#emailpopup').val(),
+              question: $('#messagepopup').val()};
+      $.post('/signup', signupData, function(data) {
           if (data.success) {
             alert('Thank you for signing up.');
           } else {
@@ -36,7 +35,7 @@ function App() {
           }
           $('.overlay-bg, .overlay-content').hide();
         });
-      me.track('Signup', 'main send message');
+      me.track('Signup', 'main send message', signupData);
     });
     $('#send-message-footer').on('click', function() {
       event.preventDefault();
@@ -44,8 +43,8 @@ function App() {
         alert('Sorry, cannot sign you up. Some required information is missing.');
         return;
       }
-      $.post('/signup', {name: $('#name').val(), email: $('#email').val(), question: $('#message').val()},
-        function(data) {
+      var signupData = {name: $('#name').val(), email: $('#email').val(), question: $('#message').val()};
+      $.post('/signup', signupData, function(data) {
           if (data.success) {
             alert('Thank you for signing up.');
           } else {
@@ -53,12 +52,12 @@ function App() {
           }
           $('.overlay-bg, .overlay-content').hide();
         });
-      me.track('Signup', 'footer send message');
+      me.track('Signup', 'footer send message', signupData);
     });
   };
 
-  App.prototype.track = function(action, eventString) {
-    window.mixpanel.track(eventString);
+  App.prototype.track = function(action, eventString, data) {
+    window.mixpanel.track(eventString, data);
     window.ga('send', 'event', 'Homepage', action, eventString);
   };
 }

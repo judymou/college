@@ -4,7 +4,6 @@ var expressHandlebars = require('express-handlebars');
 var bodyParser = require('body-parser');
 var path = require('path');
 var gsheet = require('google-spreadsheet');
-//var gsheetCred = require('./google-generated-creds.json');
 var gsheetCred = {
   client_email: process.env.gsheet_client_email,
   private_key: process.env.gsheet_private_key
