@@ -18,6 +18,11 @@
 		font-size: 2em;
 		margin-bottom: 1em;
 	}
+	
+  .wrapper {
+		padding: 1.5em 0em 2em;
+		/* Style 2 Wrapper */
+	}
 
 /* List */
 
@@ -65,5 +70,5 @@
 /* Banner */
 
 	#banner {
-		padding: 8em 2em 8em;
+		padding: 4em 2em 4em;
 	}
