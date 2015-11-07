@@ -4,7 +4,6 @@ var expressHandlebars = require('express-handlebars');
 var bodyParser = require('body-parser');
 var path = require('path');
 var gsheet = require('google-spreadsheet');
-//var gsheetCred = require('./google-generated-creds.json');
 var gsheetCred = {
   client_email: process.env.gsheet_client_email,
   private_key: process.env.gsheet_private_key
@@ -25,9 +24,9 @@ i18n.init({
 i18n.registerAppHelper(app);
 
 app.use(bodyParser());
+app.use(compression());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(i18n.handle);
-app.use(compression());
 
 app.engine('html', expressHandlebars());
 app.set('view engine', 'html');
@@ -45,6 +44,7 @@ app.post('/signup', function(req, res) {
   sheet.useServiceAccountAuth(gsheetCred, function(err) {
     if (err) {
       console.log(err);
+      res.send({success: false});
     } else {
       sheet.addRow(1, {
          name: req.body.name,
@@ -52,9 +52,7 @@ app.post('/signup', function(req, res) {
          question: req.body.question || ''
       });
       res.send({success: true});
-      return;
     }
-    res.send({success: false});
   })
 });
 
